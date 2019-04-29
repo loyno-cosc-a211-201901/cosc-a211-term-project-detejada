@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <stdlib.h>
 #define C1 32
 #define Db1 34
 #define D1 36
@@ -95,48 +96,97 @@ using namespace std;
 
 int main()
 {
-  int sixteenth = 75,
-      eighth = 150,
-      quarter = 300,
-      half = 600,
-      whole = 1200;
+  float sixteenth = 81.08,
+      eighth = 162.16,
+      quarter = 324.32,
+      half = 648.65,
+      whole = 1297.30;
 
   Beep(0, eighth);
-  Beep(E4, eighth);
-  Beep(E4, eighth);
-  Sleep(eighth);
-  Beep(E4, eighth);
-  Sleep(eighth);
-  Beep(C4, eighth);
-  Beep(E4, quarter);
-  Beep(G4, quarter);
-  Sleep(quarter);
-  Beep(G3, quarter);
-  Sleep(quarter);
+  Beep(0, eighth);
+  for (int i = 0; i < 2; i++)
+  {
+    Beep(D2, 300);
+    Beep(A3, 300);
+    Beep(A3, 300);
+    Beep(E2, sixteenth);
+    Beep(E3, sixteenth);
+    Beep(B3, half);
+    Sleep(eighth);
 
-  Beep(C4, quarter);
-  Sleep(eighth);
-  Beep(G3, quarter);
-  Sleep(eighth);
-  Beep(E3, quarter);
-  Sleep(eighth);
-  Beep(A3, quarter);
-  Beep(B3, quarter);
-  Beep(Bb3, eighth);
-  Beep(A3, quarter);
+    Beep(F2, 300);
+    Beep(C4, 300);
+    Beep(C4, 300);
+    Beep(E2, sixteenth);
+    Beep(E3, sixteenth);
+    Beep(B3, half);
+    Sleep(eighth);
+  }
 
-  Beep(G3, 200);
-  Beep(E4, 200);
-  Beep(G4, 200);
-  Beep(A4, quarter);
-  Beep(F4, eighth);
-  Beep(G4, eighth);
-  Sleep(eighth);
-  Beep(E4, quarter);
-  Beep(C4, eighth);
-  Beep(D4, eighth);
-  Beep(B3, quarter);
-  Sleep(eighth);
+  for (int i = 0; i < 2; i++)
+  {
+    Beep(D3, sixteenth);
+    Beep(F3, sixteenth);
+    Beep(D4, half);
+    Sleep(eighth);
+
+    Beep(D3, sixteenth);
+    Beep(F3, sixteenth);
+    Beep(D4, half);
+    Sleep(eighth);
+
+    Beep(E4, quarter);
+    Beep(F4, sixteenth);
+    Beep(E4, sixteenth);
+    Beep(F4, sixteenth);
+    Beep(E4, sixteenth);
+    Beep(C4, sixteenth);
+    Beep(A3, half);
+    Sleep(eighth);
+
+    Beep(A3, eighth);
+    Beep(D3, eighth);
+    Beep(F3, sixteenth);
+    Beep(G3, sixteenth);
+
+    if (i < 1)
+    {
+      Beep(A3, (half + eighth));
+      Sleep(eighth);
+      Beep(A3, eighth);
+      Beep(D3, eighth);
+      Beep(F3, sixteenth);
+      Beep(G3, sixteenth);
+      Beep(E3, (half + eighth));
+      Sleep(eighth);
+    }
+    else
+    {
+      Beep(A3, (quarter + eighth));
+      Sleep(eighth);
+      Beep(A3, eighth);
+    }
+  }
+
+  for (int i = 0; i < 2; i++)
+  {
+    Beep(D2, 300);
+    Beep(A3, 300);
+    Beep(A3, 300);
+    Beep(E2, sixteenth);
+    Beep(E3, sixteenth);
+    Beep(B3, half);
+    Sleep(eighth);
+
+    Beep(F2, 300);
+    Beep(C4, 300);
+    Beep(C4, 300);
+    Beep(E2, sixteenth);
+    Beep(E3, sixteenth);
+    Beep(B3, half);
+    Sleep(eighth);
+  }
+
 
   return 0;
 }

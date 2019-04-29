@@ -7,8 +7,8 @@
 
 /* Defining note frequencies in Hz. I decided to cover my bases and define frequencies chromatically,
 hence why I also include flats. For example, A4 = A, while Ab4 is 1 semitone below it, making Ab4 = A-flat/G-sharp.
-I decided to #define all their values rather than declare them all as consts because, as I understand it, #defining them
-doesn't force the program to allocate memory for them. */
+I decided to #define all their values rather than declare them as consts because, as I understand it, #define doesn't
+force the program to allocate memory for them. */
 #define C1 32
 #define Db1 34
 #define D1 36
@@ -101,6 +101,26 @@ doesn't force the program to allocate memory for them. */
 #define B7 3951
 
 using namespace std;
+
+void playPaydayOldestSong()
+{
+  // BPM = 200.
+  int sixteenth = 75,
+      eighth = 150,
+      quarter = 300,
+      half = 600,
+      whole = 1200;
+
+  Beep(C5, half);
+  Beep(Bb4, half);
+  Beep(Ab4, half);
+  Beep(G4, half);
+  Beep(F4, half);
+  Beep(F4, half);
+  Beep(G4, half);
+  Beep(Ab4, half);
+  Beep(Bb4, half);
+}
 
 void playMarioTheme()
 {
@@ -307,6 +327,253 @@ void playTetrisTheme()
   Beep(C5, (quarter + eighth));
   Beep(A4, (quarter + eighth));
   Beep(A4, (quarter + eighth));
+}
+
+void playHikari()
+{
+  // BPM = 100.
+  int sixteenth = 150,
+      eighth = 300,
+      quarter = 600,
+      half = 1200,
+      whole = 2400;
+
+  Beep(0, eighth);
+  Beep(0, eighth);
+
+  for(int i = 0; i < 3; i++)
+  {
+    Sleep(eighth);
+    Beep(G3, eighth);
+    Beep(D4, quarter);
+    Beep(C4, eighth);
+    Beep(Bb3, sixteenth);
+    Beep(A3, (eighth) + sixteenth);
+    Beep(Bb3, eighth);
+  }
+
+  Sleep(eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(Bb3, eighth);
+  Beep(A3, eighth);
+  Beep(Bb3, eighth);
+
+  Beep(Eb4, (eighth + sixteenth));
+  Beep(D4, (eighth + sixteenth));
+  Beep(Bb3, eighth);
+  Beep(A3, (eighth + sixteenth));
+  Beep(A3, (eighth + sixteenth));
+  Beep(Bb3, eighth);
+
+  Beep(F4, (eighth + sixteenth));
+  Beep(Eb4, (eighth + sixteenth));
+  Beep(D4, eighth);
+  Beep(C4, (eighth + sixteenth));
+  Beep(D4, (eighth + sixteenth));
+  Beep(Eb4, eighth);
+
+  Beep(D4, (quarter + eighth));
+  Beep(G3, sixteenth);
+  Beep(Bb3, (quarter + eighth));
+  Sleep(sixteenth);
+  Beep(G3, eighth);
+  Beep(D4, (quarter + eighth));
+  Beep(Eb4, sixteenth);
+  Beep(C4, (eighth + sixteenth));
+  Beep(Bb3, (eighth + sixteenth));
+  Beep(A3, eighth);
+  Sleep(whole); // Intro/chorus ends here
+
+  Beep(Eb3, (quarter + eighth)); // Lyric solo
+  Beep(F3, eighth);
+  Beep(A3, (quarter + eighth));
+  Beep(Bb3, eighth);
+  Beep(Bb3, half);
+  Sleep(half);
+
+  Beep(D3, (quarter + eighth));
+  Beep(F3, eighth);
+  Beep(A3, (quarter + eighth));
+  Beep(Bb3, eighth);
+  Beep(Bb3, half);
+  Sleep(eighth);
+  Beep(G3, (eighth + sixteenth));
+  Beep(Bb3, eighth);
+  Sleep(eighth);
+
+  Beep(Eb3, (quarter + eighth));
+  Beep(F3, eighth);
+  Beep(A3, (quarter + eighth));
+  Beep(Bb3, eighth);
+  Beep(C4, eighth);
+  Beep(Bb3, quarter);
+  Beep(Bb3, quarter);
+  Beep(G3, quarter);
+
+  Beep(F3, (quarter + eighth));
+  Beep(F3, eighth);
+  Beep(A3, (quarter + eighth));
+  Beep(Bb3, sixteenth);
+  Beep(Bb3, (half + sixteenth));
+  Sleep(eighth);
+  Beep(C4, eighth);
+  Beep(G3, quarter);
+
+  Sleep(eighth);
+  Beep(C3, eighth);
+  Beep(C3, eighth);
+  Beep(C3, eighth);
+  Beep(C3, eighth);
+  Beep(D3, sixteenth);
+  Beep(Eb3, (eighth + sixteenth));
+  Beep(C3, eighth);
+
+  Sleep(eighth);
+  Beep(B2, eighth);
+  Beep(B2, eighth);
+  Beep(B2, eighth);
+  Beep(B2, eighth);
+  Beep(C3, sixteenth);
+  Beep(D3, (eighth + sixteenth));
+  Beep(Eb3, eighth);
+
+  Beep(C3, (quarter + eighth));
+  Sleep(sixteenth);
+  Beep(Bb2, sixteenth);
+  Beep(C3, eighth);
+  Beep(Eb3, quarter);
+  Sleep((quarter + eighth));
+
+  Beep(C3, eighth);
+  Beep(C3, eighth);
+  Beep(C3, eighth);
+  Beep(C3, eighth);
+  Beep(D3, eighth);
+  Beep(Eb3, eighth);
+  Beep(F3, eighth);
+
+  Beep(G3, (quarter + eighth));
+  Beep(F3, sixteenth);
+  Beep(C3, (eighth + sixteenth));
+  Beep(G3, (eighth + sixteenth));
+  Beep(C3, (eighth + sixteenth));
+  Beep(B2, quarter);
+  Beep(Ab3, quarter);
+  Beep(G3, quarter);
+  Beep(B2, quarter);
+  Beep(C3, quarter);
+  Sleep(eighth);
+
+  Beep(Bb2, sixteenth);
+  Beep(C3, (eighth + sixteenth));
+  Beep(Eb3, (quarter + eighth));
+  Beep(Bb2, eighth);
+  Beep(C3, (eighth + sixteenth));
+  Beep(Eb3, (eighth + sixteenth));
+  Beep(Bb2, eighth);
+  Beep(B2, quarter);
+  Beep(G3, quarter);
+
+  for(int i = 0; i < 3; i++) // Chorus repeats
+  {
+    Sleep(eighth);
+    Beep(G3, eighth);
+    Beep(D4, quarter);
+    Beep(C4, eighth);
+    Beep(Bb3, sixteenth);
+    Beep(A3, (eighth) + sixteenth);
+    Beep(Bb3, eighth);
+  }
+
+  Sleep(eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(Bb3, eighth);
+  Beep(A3, eighth);
+  Beep(Bb3, eighth);
+
+  Beep(Eb4, (eighth + sixteenth));
+  Beep(D4, (eighth + sixteenth));
+  Beep(Bb3, eighth);
+  Beep(A3, (eighth + sixteenth));
+  Beep(Bb3, (eighth + sixteenth));
+  Beep(Bb3, eighth);
+
+  Beep(F4, (eighth + sixteenth));
+  Beep(Eb4, (eighth + sixteenth));
+  Beep(D4, eighth);
+  Beep(C4, (eighth + sixteenth));
+  Beep(D4, (eighth + sixteenth));
+  Beep(Eb4, eighth);
+
+  Beep(D4, (quarter + eighth));
+  Beep(G3, sixteenth);
+  Beep(Bb3, (quarter + eighth));
+  Sleep(sixteenth);
+  Beep(Eb3, eighth);
+  Beep(D4, (quarter + eighth));
+  Beep(Eb4, sixteenth);
+  Beep(C4, (eighth + sixteenth));
+  Beep(Bb3, (eighth + sixteenth));
+  Beep(A3, eighth);
+
+  Beep(F4, (quarter + eighth)); // Conclusion
+  Beep(Bb3, eighth);
+  Beep(Bb3, (quarter + eighth));
+  Sleep(eighth);
+
+  Beep(F4, (eighth + sixteenth));
+  Beep(F4, (eighth + sixteenth));
+  Beep(G4, eighth);
+  Beep(F4, eighth);
+  Beep(Eb4, eighth);
+  Beep(D4, eighth);
+  Beep(Eb4, eighth);
+
+  Beep(F4, (quarter + eighth));
+  Beep(Bb3, eighth);
+  Beep(Bb3, quarter);
+  Beep(G3, eighth);
+  Beep(Bb3, eighth);
+  Beep(Eb4, eighth);
+  Beep(D4, sixteenth);
+  Beep(Eb4, eighth);
+  Beep(F4, eighth);
+  Beep(D4, sixteenth);
+  Beep(C4, quarter);
+  Sleep(eighth);
+
+  Beep(Bb3, eighth);
+  Beep(A3, (eighth + sixteenth));
+  Beep(Bb3, (eighth + sixteenth));
+  Beep(F3, eighth);
+  Beep(A3, (eighth + sixteenth));
+  Beep(Bb3, (eighth + sixteenth));
+  Beep(F3, eighth);
+
+  Beep(Eb3, eighth);
+  Beep(D3, eighth);
+  Beep(Eb3, eighth);
+  Beep(D3, eighth);
+  Beep(Eb3, eighth);
+  Beep(F3, eighth);
+  Beep(F3, eighth);
+  Beep(G3, eighth);
+  Beep(F3, (eighth + sixteenth));
+  Beep(G3, sixteenth);
+  Beep(Bb3, half);
+  Sleep(eighth);
+
+  Beep(F3, quarter);
+  Beep(D4, quarter);
+  Beep(C4, (eighth + sixteenth));
+  Beep(Eb4, (eighth + sixteenth));
+  Beep(D4, (eighth + sixteenth));
 }
 
 void beginDearlyBeloved() // First part of Dearly Beloved
@@ -787,6 +1054,113 @@ void playSongOfStorms()
   Beep(D4, (half + quarter));
 }
 
+void playIWillGiveYouMyAll()
+{
+  // BPM = 180.
+  int sixteenth = 83,
+      eighth = 167,
+      quarter = 333,
+      half = 666,
+      whole = 1332;
+
+  Beep(0, eighth);
+  Beep(F4, eighth);
+  Beep(E4, eighth);
+  Beep(F4, eighth);
+  Beep(E4, eighth);
+  Beep(C4, eighth);
+  Beep(D4, quarter);
+  Sleep(eighth);
+
+  Sleep(whole);
+  Sleep(whole);
+  Sleep(whole);
+
+  Sleep(quarter);
+  for(int i = 0; i < 3; i++)
+  {
+    Beep(F4, eighth);
+    Beep(F4, eighth);
+  }
+
+  for(int i = 0; i < 2; i++)
+  {
+    Sleep(eighth);
+    Beep(E4, eighth);
+    Beep(E4, quarter);
+    Sleep(quarter);
+    Beep(F4, eighth);
+    Beep(F4, eighth);
+  }
+
+  Sleep(eighth);
+  Beep(E4, eighth);
+  Beep(E4, (quarter + eighth));
+  Beep(F4, eighth);
+  Beep(E4, quarter);
+
+  Sleep(quarter);
+  Beep(F4, eighth);
+  Beep(E4, eighth);
+  Beep(F4, eighth);
+  Beep(E4, eighth);
+  Beep(C4, eighth);
+  Beep(D4, quarter);
+  Sleep(eighth);
+
+  Beep(B3, eighth);
+  Beep(A3, eighth);
+  Beep(D4, eighth);
+  Beep(D4, eighth);
+  Sleep(eighth);
+  Beep(D4, eighth);
+  Sleep(eighth);
+  Beep(C4, eighth);
+  Sleep(eighth);
+  Beep(A3, eighth);
+  Beep(A3, eighth);
+  Beep(A3, eighth);
+  Beep(C4, eighth);
+  Beep(D4, quarter);
+  Beep(D4, eighth);
+  Beep(C4, eighth);
+  Beep(A3, eighth);
+  Beep(E4, quarter);
+  Beep(D4, eighth);
+  Beep(D4, eighth);
+
+  Sleep(quarter);
+  for(int i = 0; i < 3; i++)
+  {
+    Beep(F4, eighth);
+    Beep(F4, eighth);
+  }
+
+  for(int i = 0; i < 2; i++)
+  {
+    Sleep(eighth);
+    Beep(E4, eighth);
+    Beep(E4, quarter);
+    Sleep(quarter);
+    Beep(F4, eighth);
+    Beep(F4, eighth);
+  }
+
+  Sleep(eighth);
+  Beep(E4, eighth);
+  Beep(E4, (quarter + eighth));
+  Beep(F4, eighth);
+  Beep(E4, quarter);
+
+  Beep(F4, eighth);
+  Beep(E4, eighth);
+  Beep(F4, eighth);
+
+  Beep(E4, eighth);
+  Beep(C4, eighth);
+  Beep(D4, quarter);
+}
+
 int userGoAgain() // Asks user if they want to select a new song after playing previously selected song
 {
   int userChoice;
@@ -800,7 +1174,7 @@ int userGoAgain() // Asks user if they want to select a new song after playing p
       case 'Y':
       case 'y':
       cout << "\n";
-        cout << "     Great! Make a new selection (1-4):\n\n";
+        cout << "     Great! Make a new selection (1-4):\n";
         userChoice = 0; // Resets userChoice
         break;
 
@@ -808,7 +1182,7 @@ int userGoAgain() // Asks user if they want to select a new song after playing p
       case 'n':
         cout << "\n";
         cout << "     Okay, closing the program...\n";
-        userChoice = 6; // Sets userChoice to 'Quit' so that the do-while loop can end.
+        userChoice = 9; // Sets userChoice to 'Quit' so that the do-while loop can end.
         break;
 
       default:
@@ -824,15 +1198,21 @@ int main()
 {
   int userChoice;
 
-  cout << "     Welcome to the Beep() Music Box! Below are some example songs for you to play:\n\n";
+  cout << "     Welcome to the Beep() Music Box! Below are some example songs for you to play.\n";
+  cout << "     Please ensure you are using an external sound output device, either speakers or headphones,\n";
+  cout << "     otherwise the Music Box won't work!\n";
   do
   {
+    cout << "\n";
     cout << "\t" << "1. 'Super Mario Bros. Theme'\n";
     cout << "\t" << "2. 'Korobeiniki' from Tetris\n";
     cout << "\t" << "3. 'Dearly Beloved' from Kingdom Hearts\n";
     cout << "\t" << "4. 'Song of Time' from Ocarina of Time\n";
     cout << "\t" << "5. 'Song of Storms' from Ocarina of Time\n";
-    cout << "\t" << "6. Quit\n\n";
+    cout << "\t" << "6. The oldest song in the world\n";
+    cout << "\t" << "7. 'I Will Give You My All 2017' from Payday 2\n";
+    cout << "\t" << "8. 'Hikari' from Kingdom Hearts\n";
+    cout << "\t" << "9. Quit\n\n";
     cout << "     What do you choose? ";
       cin >> userChoice;
 
@@ -867,22 +1247,43 @@ int main()
             break;
 
       case 5:
-        cout << "     Playing 'Song of Storms'\n";
+        cout << "     Playing 'Song of Storms'\n"; // Candidate for removal/replacement
         playSongOfStorms();
 
         userChoice = userGoAgain();
             break;
 
       case 6:
+        cout << "     Playing the oldest song in the world\n"; // Candidate for removal/replacement
+        playPaydayOldestSong();
+
+        userChoice = userGoAgain();
+          break;
+
+      case 7:
+        cout << "     Playing 'I Will Give You My All'\n"; // Candidate for removal/replacement
+        playIWillGiveYouMyAll();
+
+        userChoice = userGoAgain();
+          break;
+
+      case 8:
+        cout << "     Playing 'Hikari'\n";
+        playHikari();
+
+        userChoice = userGoAgain();
+          break;
+
+      case 9:
         cout << "     Okay, no music shall be played.\n";
           break;
 
       default:
-        cout << "\t" << "Please input a valid selection: ";
+        cout << "     Please input a valid selection: ";
           cin >> userChoice;
             break;
     }
-  } while(userChoice != 6);
+  } while(userChoice != 9);
 
   return 0;
 }
